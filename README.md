@@ -1,4 +1,4 @@
-# Awesome Rust AI Korea 🦀🇰🇷
+# Awesome Rust AI
 
 국내외 러스트(Rust) 기반 인공지능 및 머신러닝 생태계의 유용한 라이브러리, 튜토리얼, 아티클을 모아둔 큐레이션 허브입니다.
 
