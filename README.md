@@ -25,6 +25,7 @@ A curated hub systematically collecting key libraries, frameworks, tutorials, an
 - [Candle](https://github.com/huggingface/candle) - Minimalist, pure-Rust deep learning framework created by Hugging Face. Designed specifically for performance-critical model inference, serverless runtimes, and WebAssembly (WASM).
 - [dfdx](https://github.com/coreylowman/dfdx) - Ergonomic, pure-Rust deep learning library featuring compile-time shape and type checking for maximum safety across neural networks.
 - [tch-rs](https://github.com/LaurentMazare/tch-rs) - Comprehensive, battle-tested Rust bindings for PyTorch's underlying C++ engine (LibTorch).
+- [RustGPT](https://github.com/tekaratzas/RustGPT) - A complete transformer-based LLM implemented from scratch in pure Rust using only `ndarray`, featuring custom tokenization, pre-training, instruction tuning, and full backpropagation without external ML frameworks.
 
 ## ⚡ LLM Inference & Serving
 - [Mistral.rs](https://github.com/EricLBuehler/mistral.rs) - Fast, feature-complete LLM inference platform supporting multi-architecture models, multimodal vision-language models, and state-of-the-art quantization formats (GGUF, GGML, AWQ, GPTQ).
@@ -35,6 +36,7 @@ A curated hub systematically collecting key libraries, frameworks, tutorials, an
 - [Tabby](https://github.com/TabbyML/tabby) - Self-hosted open-source AI coding assistant written in Rust, engineered as an on-premise alternative to GitHub Copilot.
 
 ## 🤖 Agents & LLM Orchestration
+- [Goose](https://github.com/block/goose) - Open-source, extensible AI agent engine and desktop/CLI app written in Rust that goes beyond code suggestions to execute shell commands, edit files, and automate workflows via Model Context Protocol (MCP).
 - [Rig](https://github.com/0xPlaygrounds/rig) - Opinionated, modular framework for building production-ready AI applications, autonomous agents, and RAG pipelines in Rust (supporting OpenAI, Anthropic, Gemini, Cohere, Groq, and Ollama).
 - [Kalosm](https://github.com/floneum/kalosm) - Multimodal AI orchestration framework seamlessly unifying local on-device models (powered by Candle) with cloud APIs, speech recognition, and vision modules for complex agentic workflows.
 - [genai](https://github.com/jeremychone/rust-genai) - Universal multi-provider client crate providing unified, idiomatic Rust types and streaming abstractions across OpenAI, Anthropic, Gemini, Groq, Cohere, DeepSeek, and Ollama.
