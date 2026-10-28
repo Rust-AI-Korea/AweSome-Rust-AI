@@ -73,7 +73,7 @@ A curated hub systematically collecting key libraries, frameworks, tutorials, an
 
 ## 📚 Tutorials, Documentation & Community Resources
 - [Are We Learning Yet?](https://www.arewelearningyet.com/) - Central tracking portal evaluating the maturity, readiness, and active crates across the entire Rust machine learning landscape.
-- [The Burn Book](https://burn.dev/book/) - Comprehensive official guide to Burn, covering project architecture, custom training loops, model building, and ONNX exports.
+- [The Burn Book](https://burn.dev/) - Comprehensive official guide to Burn, covering project architecture, custom training loops, model building, and ONNX exports.
 - [Hugging Face Candle Documentation](https://huggingface.github.io/candle/) - Official guides, tutorials, and practical implementation examples for running LLaMA, Whisper, Stable Diffusion, and Mistral in pure Rust.
 - [Rig Official Guide & Documentation](https://rig.rs/docs/) - Architectural overviews, integration recipes, and production patterns for LLM agents, embeddings, and RAG pipelines.
 - [Awesome Machine Learning with Rust](https://github.com/relative/awesome-machine-learning-rust) - Community-maintained directory cataloging machine learning libraries and benchmarks in Rust.
