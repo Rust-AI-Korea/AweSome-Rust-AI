@@ -1,82 +1,94 @@
 # Awesome Rust AI
 
-A curated hub systematically collecting key libraries, tutorials, and articles across the global Rust artificial intelligence (AI) and machine learning (ML) ecosystem.
+A curated hub systematically collecting key libraries, frameworks, tutorials, and community resources across the global Rust artificial intelligence (AI), machine learning (ML), and agent ecosystem.
 
-> An open-source guide for developers leveraging Rust's core strengths—high performance, memory safety, and zero-cost abstractions—to build next-generation AI infrastructure and inference engines.
+> An open-source guide for developers leveraging Rust's core strengths—bare-metal performance, memory safety, concurrency, and zero-cost abstractions—to build production-ready AI infrastructure, inference engines, and intelligent autonomous agents.
 
 ---
 
 ## 📑 Table of Contents
 - [📦 Deep Learning Frameworks](#-deep-learning-frameworks)
 - [⚡ LLM Inference & Serving](#-llm-inference--serving)
-- [🤖 Agents & Orchestration](#-agents--orchestration)
-- [📊 Classical ML & Statistics](#-classical-ml--statistics)
-- [🔍 Vector DB & Embeddings](#-vector-db--embeddings)
+- [🤖 Agents & LLM Orchestration](#-agents--llm-orchestration)
+- [🎮 Reinforcement Learning (RL)](#-reinforcement-learning-rl)
+- [📊 Classical Machine Learning & Statistics](#-classical-machine-learning--statistics)
+- [🔍 Vector Databases & Embeddings](#-vector-databases--embeddings)
 - [🔤 NLP, Speech & Computer Vision](#-nlp-speech--computer-vision)
 - [🔢 Math, Tensors & Data Engineering](#-math-tensors--data-engineering)
-- [📚 Tutorials, Articles & Learning Resources](#-tutorials-articles--learning-resources)
+- [📚 Tutorials, Documentation & Community Resources](#-tutorials-documentation--community-resources)
 - [📖 Contributor Guide](#-contributor-guide)
 
 ---
 
 ## 📦 Deep Learning Frameworks
-- [Candle](https://github.com/huggingface/candle) - Minimalist deep learning framework developed by Hugging Face, optimized for serverless environments, WebAssembly (WASM), and lightweight model deployments.
-- [Burn](https://github.com/tracel-ai/burn) - Next-generation deep learning framework offering both flexibility and speed. Supports diverse backends (WGPU, CUDA, LibTorch, CubeCL) with end-to-end training and deployment workflows.
-- [dfdx](https://github.com/coreylowman/dfdx) - Pure Rust deep learning library with compile-time shape checking for maximum type safety.
-- [tch-rs](https://github.com/LaurentMazare/tch-rs) - Comprehensive, mature Rust bindings for the C++ PyTorch (LibTorch) API.
+- [Burn](https://github.com/tracel-ai/burn) - Next-generation, production-grade deep learning framework balancing flexibility and raw speed. Features multi-backend hardware acceleration (WGPU, CUDA, ROCm, LibTorch, CubeCL) with end-to-end training, automatic differentiation, and deployment workflows.
+- [Candle](https://github.com/huggingface/candle) - Minimalist, pure-Rust deep learning framework created by Hugging Face. Designed specifically for performance-critical model inference, serverless runtimes, and WebAssembly (WASM).
+- [dfdx](https://github.com/coreylowman/dfdx) - Ergonomic, pure-Rust deep learning library featuring compile-time shape and type checking for maximum safety across neural networks.
+- [tch-rs](https://github.com/LaurentMazare/tch-rs) - Comprehensive, battle-tested Rust bindings for PyTorch's underlying C++ engine (LibTorch).
 
 ## ⚡ LLM Inference & Serving
-- [Mistral.rs](https://github.com/EricLBuehler/mistral.rs) - Fast, production-ready LLM inference engine supporting GGUF, GGML, AWQ, and GPTQ quantization along with multimodal models.
-- [tract](https://github.com/sonos/tract) - High-performance neural network inference engine by Sonos, optimized for ONNX/TensorFlow model execution on edge devices, embedded hardware, and WASM.
-- [llama-cpp-rs](https://github.com/utilityai/llama-cpp-rs) - High-performance Rust bindings for `llama.cpp`, the de facto standard for running local LLMs in C++.
-- [llm](https://github.com/rustformers/llm) - Rust ecosystem toolkit designed to easily run various open-source large language models locally.
-- [Tabby](https://github.com/TabbyML/tabby) - Self-hosted open-source AI coding assistant built with Rust (an open alternative to GitHub Copilot).
+- [Mistral.rs](https://github.com/EricLBuehler/mistral.rs) - Fast, feature-complete LLM inference platform supporting multi-architecture models, multimodal vision-language models, and state-of-the-art quantization formats (GGUF, GGML, AWQ, GPTQ).
+- [Text Generation Inference (TGI)](https://github.com/huggingface/text-generation-inference) - Hugging Face's industrial-grade production serving engine for LLMs, featuring continuous batching, FlashAttention, and token streaming powered by a Rust web server.
+- [tract](https://github.com/sonos/tract) - Sonos's high-performance neural network inference engine supporting ONNX and TensorFlow models for embedded Linux, mobile, and WASM targets.
+- [llama-cpp-rs](https://github.com/utilityai/llama-cpp-rs) - High-level, safe Rust bindings for `llama.cpp`, enabling optimized CPU/GPU quantized inference for open-weight models.
+- [llm](https://github.com/rustformers/llm) - Rust-native ecosystem toolkit designed to inspect and run popular quantized open-source models with minimal system dependencies.
+- [Tabby](https://github.com/TabbyML/tabby) - Self-hosted open-source AI coding assistant written in Rust, engineered as an on-premise alternative to GitHub Copilot.
 
-## 🤖 Agents & Orchestration
-- [Rig](https://github.com/0xPlaygrounds/rig) - Robust framework for building portable, modular AI applications and agents in Rust (akin to LangChain/LlamaIndex; supports OpenAI, Anthropic, Gemini, Ollama, and RAG pipelines).
-- [Kalosm](https://github.com/floneum/kalosm) - Multimodal AI agent framework integrating local models (via Candle) with cloud LLMs, speech, and vision to handle complex workflows.
-- [genai](https://github.com/jeremychone/rust-genai) - Multi-provider client library providing a unified, idiomatic Rust API across OpenAI, Anthropic, Gemini, Groq, Ollama, and more.
-- [llm-chain](https://github.com/sobelio/llm-chain) - Early-stage Rust LLM orchestration framework for building step-by-step task chains with large language models.
+## 🤖 Agents & LLM Orchestration
+- [Rig](https://github.com/0xPlaygrounds/rig) - Opinionated, modular framework for building production-ready AI applications, autonomous agents, and RAG pipelines in Rust (supporting OpenAI, Anthropic, Gemini, Cohere, Groq, and Ollama).
+- [Kalosm](https://github.com/floneum/kalosm) - Multimodal AI orchestration framework seamlessly unifying local on-device models (powered by Candle) with cloud APIs, speech recognition, and vision modules for complex agentic workflows.
+- [genai](https://github.com/jeremychone/rust-genai) - Universal multi-provider client crate providing unified, idiomatic Rust types and streaming abstractions across OpenAI, Anthropic, Gemini, Groq, Cohere, DeepSeek, and Ollama.
+- [langchain-rust](https://github.com/Abraxas-365/langchain-rust) - Rust implementation of LangChain abstractions for chaining prompts, memory buffers, tools, and multi-step agent decisions.
+- [llm-chain](https://github.com/sobelio/llm-chain) - Modular orchestration framework for structuring multi-stage LLM chains, automated reasoning, and tool execution loops.
 
-## 📊 Classical ML & Statistics
-- [linfa](https://github.com/rust-ml/linfa) - Comprehensive classical machine learning toolkit modeled after Python's Scikit-learn (regression, classification, clustering, dimensionality reduction).
-- [smartcore](https://github.com/smartcorelib/smartcore) - Pure Rust machine learning library featuring high-performance implementations of classification, regression, SVMs, decision trees, and random forests.
-- [rurel](https://github.com/milanboers/rurel) - Flexible, reusable reinforcement learning (Q-learning) implementation.
+## 🎮 Reinforcement Learning (RL)
+- [border](https://github.com/taku-y/border) - Comprehensive reinforcement learning library written in Rust, supporting vectorized environments, gym-like observation interfaces, and Deep Q-Networks (DQN) with PyTorch (tch-rs) integration.
+- [rurel](https://github.com/milanboers/rurel) - Generic, zero-dependency reinforcement learning library offering flexible implementations of state-action spaces and Q-Learning algorithms.
+- [gym-rs](https://github.com/MathisWellmann/gym-rs) - High-performance Rust implementation of standard OpenAI Gym environments (CartPole, MountainCar, Pendulum) for benchmarking agent control policies.
 
-## 🔍 Vector DB & Embeddings
-- [Qdrant](https://github.com/qdrant/qdrant) - High-performance, open-source production-grade vector search engine and vector database written in Rust.
-- [LanceDB](https://github.com/lancedb/lancedb) - Lightweight, serverless/embedded vector database built on the modern Lance columnar data format.
-- [fastembed-rs](https://github.com/Anush008/fastembed-rs) - Lightweight Rust library for fast text and image embedding generation with minimal dependencies.
+## 📊 Classical Machine Learning & Statistics
+- [linfa](https://github.com/rust-ml/linfa) - Comprehensive classical machine learning toolkit modeled after Python's Scikit-learn, providing modular algorithms for clustering, regression, classification, SVMs, and PCA.
+- [smartcore](https://github.com/smartcorelib/smartcore) - Pure-Rust machine learning engine featuring robust implementations of Decision Trees, Random Forests, Naive Bayes, K-Means, and matrix factorizations.
+- [augurs](https://github.com/grafana/augurs) - High-throughput time-series analysis and forecasting library built by Grafana in Rust, supporting AutoARIMA and seasonal decomposition.
+
+## 🔍 Vector Databases & Embeddings
+- [Qdrant](https://github.com/qdrant/qdrant) - High-throughput, distributed vector search engine and database written entirely in Rust, featuring rich payload filtering and fast ANN indexing.
+- [LanceDB](https://github.com/lancedb/lancedb) - Lightweight, serverless embedded vector database powered by the Lance columnar format, purpose-built for multi-modal AI data and low-latency disk-based retrieval.
+- [Text Embeddings Inference (TEI)](https://github.com/huggingface/text-embeddings-inference) - Blazing-fast inference toolkit by Hugging Face for serving vector embeddings, re-rankers, and cross-encoders.
+- [fastembed-rs](https://github.com/Anush008/fastembed-rs) - Low-overhead Rust crate for fast text and image embedding generation using ONNX Runtime without heavy external dependencies.
+- [hora](https://github.com/hora-search/hora) - Lightweight approximate nearest neighbor (ANN) search library supporting multiple indexing algorithms (HNSW, BPTree, SSG).
 
 ## 🔤 NLP, Speech & Computer Vision
-- [tokenizers](https://github.com/huggingface/tokenizers) - Industry-standard, ultra-fast tokenization library by Hugging Face (supporting BPE, WordPiece, and Unigram).
-- [whisper-rs](https://github.com/tazz4843/whisper-rs) - High-performance Rust bindings for `whisper.cpp`, enabling local speech-to-text (STT) inference.
-- [image](https://github.com/image-rs/image) & [imageproc](https://github.com/image-rs/imageproc) - Core crates in the Rust graphics ecosystem for 2D image processing, computer vision preprocessing, and manipulation.
+- [tokenizers](https://github.com/huggingface/tokenizers) - Industry-standard, ultra-fast tokenization library engineered by Hugging Face (supporting BPE, WordPiece, Unigram, and Byte-level encodings).
+- [whisper-rs](https://github.com/tazz4843/whisper-rs) - Idiomatic Rust bindings for Georgi Gerganov's `whisper.cpp`, enabling high-performance on-device speech-to-text (STT) inference.
+- [image](https://github.com/image-rs/image) & [imageproc](https://github.com/image-rs/imageproc) - Foundational Rust crates for 2D image reading, processing, color conversions, and computer vision feature extraction.
+- [rust-bert](https://github.com/guillaume-be/rust-bert) - Ready-to-use NLP pipelines (summarization, translation, QA, sentiment analysis) based on Hugging Face Transformers implemented in Rust.
 
 ## 🔢 Math, Tensors & Data Engineering
-- [Polars](https://github.com/pola-rs/polars) - Lightning-fast DataFrame library built on Apache Arrow, engineered for maximum multithreaded performance (orders of magnitude faster than pandas).
-- [Apache DataFusion](https://github.com/apache/datafusion) - Rust-native in-memory SQL query engine for high-scale analytical queries and ETL workflows.
-- [ndarray](https://github.com/rust-ndarray/ndarray) - Rust's fundamental scientific computing library offering N-dimensional arrays and linear algebra operations (NumPy equivalent).
-- [CubeCL](https://github.com/tracel-ai/cubecl) - Hardware acceleration platform for writing high-performance GPU compute kernels (WGPU, CUDA, ROCm) in pure Rust with JIT compilation (core accelerator behind Burn).
+- [Polars](https://github.com/pola-rs/polars) - High-performance DataFrame engine written in Rust on top of Apache Arrow, delivering multithreaded vectorization and query optimization.
+- [Apache DataFusion](https://github.com/apache/datafusion) - Extensible, in-memory SQL query engine and computing pipeline written in Rust for big data analytics.
+- [CubeCL](https://github.com/tracel-ai/cubecl) - Multi-target compute framework for writing high-performance, JIT-compiled GPU kernels (CUDA, ROCm, WGPU) entirely in Rust syntax.
+- [ndarray](https://github.com/rust-ndarray/ndarray) - Fundamental N-dimensional array container and mathematical computation crate for scientific computing (NumPy equivalent).
+- [nalgebra](https://github.com/dimforge/nalgebra) - Comprehensive linear algebra library providing general and fixed-size matrices, vector spaces, and geometric transformations.
 
-## 📚 Tutorials, Articles & Learning Resources
-- [Are We Learning Yet?](https://www.arewelearningyet.com/) - Central tracking hub monitoring the maturity and readiness of the Rust machine learning ecosystem.
-- [The Burn Book](https://burn.dev/book/) - Official Tracel AI guide to the Burn framework (covering installation, custom model training, and ONNX export).
-- [Hugging Face Candle Guide & Examples](https://huggingface.co/docs/candle/main/en/index) - Official documentation and practical examples for running LLaMA, Whisper, and Stable Diffusion using Candle.
-- [Rig Official Documentation & Guides](https://rig.rs/docs/) - Architectural overview and practical guides for building AI agents and RAG pipelines in Rust.
-- [Rust-AI-Korea Organization](https://github.com/Rust-AI-Korea) - Community hub for Korean and international Rust AI/ML developers sharing knowledge and open-source tooling.
-- *Community-authored blog posts, translations, and hands-on guides are always welcome! Please submit a PR to add your resources.*
+## 📚 Tutorials, Documentation & Community Resources
+- [Are We Learning Yet?](https://www.arewelearningyet.com/) - Central tracking portal evaluating the maturity, readiness, and active crates across the entire Rust machine learning landscape.
+- [The Burn Book](https://burn.dev/book/) - Comprehensive official guide to Burn, covering project architecture, custom training loops, model building, and ONNX exports.
+- [Hugging Face Candle Documentation](https://huggingface.co/docs/candle/main/en/index) - Official guides, tutorials, and practical implementation examples for running LLaMA, Whisper, Stable Diffusion, and Mistral in pure Rust.
+- [Rig Official Guide & Documentation](https://rig.rs/docs/) - Architectural overviews, integration recipes, and production patterns for LLM agents, embeddings, and RAG pipelines.
+- [Awesome Machine Learning with Rust](https://github.com/relative/awesome-machine-learning-rust) - Community-maintained directory cataloging machine learning libraries and benchmarks in Rust.
+- [Rust-AI-Korea Organization](https://github.com/Rust-AI-Korea) - Community and open-source collaboration hub fostering Rust-based AI/ML system development, translation, and technical sharing.
 
 ## 📖 Contributor Guide
-The Rust AI ecosystem is evolving rapidly.
-- Discovered an exciting new library or tool?
-- Wrote a tutorial or an insightful engineering blog post?
-- Spot areas where descriptions or links can be improved?
+The Rust AI ecosystem is expanding rapidly with new breakthroughs every month.
+- Discovered an essential library, tool, or runtime?
+- Authored a technical case study, tutorial, or reproducible benchmark?
+- Identified outdated links or descriptions needing precision?
 
-Contributions via Pull Requests (PRs) and **Issues** are warmly welcomed!
+Contributions via Pull Requests (PRs) and **GitHub Issues** are always welcome!
 
 ### How to Contribute
 1. Fork this repository.
-2. Add your entry under the relevant section following this format:
+2. Add your entry under the relevant category adhering to the standardized format:
    ```markdown
-   - [Project Name](Link) - Concise summary highlighting key features and capabilities
+   - [Project Name](Link) - Concise summary highlighting key features, backends, and primary use cases.
